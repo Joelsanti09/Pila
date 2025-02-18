@@ -1,0 +1,22 @@
+class Stack:
+    def __init__(self):
+        self.elemento = []
+
+    def isEmpty(self):
+        return len(self.elemento) == 0
+
+    def push(self, dato):
+        self.elemento.append(dato)
+
+    def pop(self):
+        if self.isEmpty():
+            return None
+        return self.elemento.pop()
+
+    def size(self):
+        return len(self.elemento)
+
+    def peek(self):
+        if self.isEmpty():
+            return None
+        return self.elemento[-1]
