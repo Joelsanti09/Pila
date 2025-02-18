@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 100
+
+typedef struct {
+    int elementos[MAX];
+    int tope;
+} Stack;
+
+void init(Stack *s) {
+    s->tope = -1;
+}
+
+int isEmpty(Stack *s) {
+    return s->tope == -1;
+}
+
+void push(Stack *s, int dato) {
+    if (s->tope < MAX - 1) {
+        s->elementos[++s->tope] = dato;
+    }
+}
+
+int pop(Stack *s) {
+    if (isEmpty(s)) {
+        return -1;
+    }
+    return s->elementos[s->tope--];
+}
+
+int size(Stack *s) {
+    return s->tope + 1;
+}
+
+int peek(Stack *s) {
+    if (isEmpty(s)) {
+        return -1;
+    }
+    return s->elementos[s->tope];
+}
