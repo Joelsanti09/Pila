@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+
+class Stack {
+    private ArrayList<Integer> elemento;
+
+    public Stack() {
+        this.elemento = new ArrayList<>();
+    }
+
+    public boolean isEmpty() {
+        return elemento.isEmpty();
+    }
+
+    public void push(int dato) {
+        elemento.add(dato);
+    }
+
+    public Integer pop() {
+        if (isEmpty()) {
+            return null;
+        }
+        return elemento.remove(elemento.size() - 1);
+    }
+
+    public int size() {
+        return elemento.size();
+    }
+
+    public Integer peek() {
+        if (isEmpty()) {
+            return null;
+        }
+        return elemento.get(elemento.size() - 1);
+    }
+}
